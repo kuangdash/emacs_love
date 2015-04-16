@@ -135,7 +135,7 @@ pre.src:before {
   display: none;
   position: absolute;
   background-color: white;
-  top: -10px;
+  top: -18px;
   right: 10px;
   padding: 3px;
   border: 1px solid black;
@@ -222,7 +222,8 @@ table th.right, table td.right {
     color: #00ffff;
 }
 .masthead ul {
-    list-style: none;
+  list-style: none;
+  margin: 8px 0;
 }
 .masthead li {
     display: inline-block;
@@ -232,6 +233,14 @@ table th.right, table td.right {
     content: "\00B7 \00a0";
     color: #cfc;
 }
+
+/*site-nav*/
+.site-nav {border-top: 1px solid #e8e8e8;}
+.site-nav .menu-icon { display: none; }
+.site-nav li a {line-height: 1.5; }
+.site-nav li a:not(:first-child) { margin-left: 20px; }
+
+
 /* searchform*/
 #searchform {
     position: absolute;
@@ -293,7 +302,6 @@ table th.right, table td.right {
 .post ol > li:before {
     content: counter(o-list) ") ";
     counter-increment: o-list;
-    margin-left: -1.85em;
     color: #cfc;
 }
 
@@ -386,6 +394,9 @@ table th.right, table td.right {
     margin: 0;
     line-height: 1.5;
 }
+.footdef {
+    margin: 0 0 20px;
+}
 .footpara {
     display: inline;
 }
@@ -393,6 +404,19 @@ table th.right, table td.right {
 /* Responsive
    -------------------------------------------------- */
 
+/* site-nav*/
+@media screen and (max-width: 512px) {
+  .site-nav {border-top: 1px solid #e8e8e8; text-align: left; }
+  .site-nav .menu-icon { display: block; width: 36px; height: 21px; line-height: 0; margin-top: 10px; margin-bottom: 5px; text-align: center;
+                         }
+  .site-nav .menu-icon > svg { width: 18px; height: 15px; }
+  .site-nav .menu-icon > svg path { fill: #ffff00; }
+  .site-nav .trigger { clear: both; display: none; }
+  .site-nav:hover .trigger { display: block; padding-bottom: 5px; }
+  .site-nav li{ display: block; padding: 5px 10px; }
+  .site-nav li:before{ display: inline-block; content: "\00B7 \00a0"; color: #cfc;}}
+
+/* whole page */
 @media (min-width: 768px) {
     /* Increase body padding and font-sizes */
     body {
