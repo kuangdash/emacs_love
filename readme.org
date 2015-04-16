@@ -1,0 +1,6 @@
+
+* About
+The theme is created for a static sate generator: org-page --- which is served for [[https://emacs-china.github.io][emacs-china]].
+
+* Introduction
+Referring to [[http://kuangdash.github.io/blog/2015/03/23/org-page%25E7%259A%2584%25E9%2585%258D%25E7%25BD%25AE%25E4%25B8%258E%25E4%25BD%25BF%25E7%2594%25A8/][How to use org-page]] (written in chinese).
