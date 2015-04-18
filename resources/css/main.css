@@ -50,7 +50,12 @@ p {
     margin-bottom: 0.2em;
     text-align: center;
 }
-
+h1 {
+    font-size:20px;
+}
+h2, h3, h4 {
+    font-size:18px;
+}
 h1, h2, h3, h4{
     position: relative;
     margin: 30px 0 20px;
@@ -429,7 +434,7 @@ table th.right, table td.right {
         font-size: 18px;
         line-height: 1.75;
     }
-    h1:before, h2:before, h3:before {
+    h1:before, h2:before, h3:before, h4:before{
         display: inline;
     }
 }
