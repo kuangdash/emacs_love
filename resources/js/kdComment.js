@@ -34,7 +34,7 @@ $(window).scroll(function () {
         if(topArray[Math.floor((startPoint+endPoint)/2)] > offsetValue){
             endPoint = (startPoint+endPoint)/2;
         }
-        else if(topArray[Math.round((startPoint+endPoint)/2)] < offsetValue){
+        else if(topArray[Math.floor((startPoint+endPoint)/2)] < offsetValue){
             startPoint = (startPoint+endPoint)/2;
         }
         else{
