@@ -20,7 +20,7 @@ var kd_n = 1;
 var kd_str = '#orgheadline' + kd_n.toString();
 var kd_head = $('div[id*=\'text-orgheadline\']');
 var topArray = [];
-while(kd_head.eq(kd_n-1)!=undefined){
+while(kd_n < kd_head.length){
     topArray.push(kd_head.eq(kd_n-1).offset().top);
     kd_n++;
 }
@@ -29,9 +29,9 @@ $(window).scroll(function () {
     //var top1=kd_head.find(kd_str).offset().top;
     var startPoint=0;
     var endPoint=topArray.length-1;
-    var offsetValue=window.pageYOffset+50;
+    var offsetValue=window.pageYOffset+40;
     while(topArray[startPoint] < offsetValue && topArray[endPoint] > offsetValue){
-        if(topArray[Math.round((startPoint+endPoint)/2)] > offsetValue){
+        if(topArray[Math.floor((startPoint+endPoint)/2)] > offsetValue){
             endPoint = (startPoint+endPoint)/2;
         }
         else if(topArray[Math.round((startPoint+endPoint)/2)] < offsetValue){
