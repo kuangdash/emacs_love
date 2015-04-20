@@ -16,37 +16,36 @@ $('.ds-label').click(function(){
 
 /* navigate */
 var kd_toc = $('#text-table-of-contents ul li');
-var kd_n = 2;
-var kd_tmp = kd_n/2;
-var kd_str = '';
-var kd_head = $('div[id*=\'orgheadline\']');
+var kd_n = 1;
+var kd_str = '#orgheadline' + kd_n.toString();
+var kd_head = $('div[id*=\'text-orgheadline\']');
+var topArray = [];
+while(kd_head.eq(kd_n-1)!=undefined){
+    topArray.push(kd_head.eq(kd_n-1).offset().top);
+    kd_n++;
+}
 $(window).scroll(function () {
     //kd_str="#orgheadline" + kd_n.toString();
     //var top1=kd_head.find(kd_str).offset().top;
-    var top1 = kd_head.eq(kd_n-2).offset().top;
-    var top2 = kd_head.eq(kd_n).offset().top;
-    if (window.pageYOffset <= (top1-30)) {
-        kd_str = '#orgheadline' + kd_tmp.toString();
-        kd_toc.children('a[href="' + kd_str + '"]').css('color', '#ffff00');
-        if (kd_n > 2) {
-            kd_n = kd_n - 2;
-            kd_tmp = kd_n/2;
-            kd_str = '#orgheadline' + kd_tmp.toString();
-            kd_toc.children('a[href="' + kd_str + '"]').css('color', '#22ff22');
+    var startPoint=0;
+    var endPoint=topArray.length-1;
+    var offsetValue=window.pageYOffset+50;
+    while(topArray[startPoint] < offsetValue && topArray[endPoint] > offsetValue){
+        if(topArray[Math.round((startPoint+endPoint)/2)] > offsetValue){
+            endPoint = (startPoint+endPoint)/2;
         }
-        //kd_n = parseInt(kd_str.slice(-1));
-
-    }
-    else if (window.pageYOffset >= (top2-30)) {
-        kd_str = '#orgheadline' + kd_tmp.toString();
-        kd_toc.children('a[href="' + kd_str + '"]').css('color', '#ffff00');
-        if (kd_n < (kd_head.length-2)) {
-            kd_n = kd_n + 2;
-            kd_tmp = kd_n/2;
-            kd_str = '#orgheadline' + kd_tmp.toString();
-            kd_toc.children('a[href="' + kd_str + '"]').css('color', '#22ff22');
+        else if(topArray[Math.round((startPoint+endPoint)/2)] < offsetValue){
+            startPoint = (startPoint+endPoint)/2;
+        }
+        else{
+            kd_n=startPoint+1;
+            break;
         }
     }
+    kd_toc.children('a[href="' + kd_str + '"]').css('color', '#ffff00');
+    kd_str = '#orgheadline' + kd_n.toString();
+    kd_toc.children('a[href="' + kd_str + '"]').css('color', '#22ff22');
+    //kd_n = parseInt(kd_str.slice(-1));
 });
 
 /* floating card */
