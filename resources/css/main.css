@@ -109,6 +109,7 @@ ul, ol {
 }
 code, pre {
     font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+    font-size: 0.9em;
 }
 .underline {
     text-decoration: underline;
