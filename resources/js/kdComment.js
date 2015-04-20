@@ -32,10 +32,10 @@ $(window).scroll(function () {
     var offsetValue=window.pageYOffset+40;
     while(topArray[startPoint] < offsetValue && topArray[endPoint] > offsetValue){
         if(topArray[Math.floor((startPoint+endPoint)/2)] > offsetValue){
-            endPoint = Math.floor(startPoint+endPoint)/2;
+            endPoint = Math.floor((startPoint+endPoint)/2);
         }
         else if(topArray[Math.floor((startPoint+endPoint)/2)] < offsetValue){
-            startPoint = Math.floor(startPoint+endPoint)/2;
+            startPoint = (Math.floor((startPoint+endPoint)/2));
         }
         else{
             break;
