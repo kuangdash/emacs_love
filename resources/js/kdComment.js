@@ -38,10 +38,10 @@ $(window).scroll(function () {
             startPoint = (startPoint+endPoint)/2;
         }
         else{
-            kd_n=startPoint+1;
             break;
         }
     }
+    kd_n=startPoint+1;
     kd_toc.children('a[href="' + kd_str + '"]').css('color', '#ffff00');
     kd_str = '#orgheadline' + kd_n.toString();
     kd_toc.children('a[href="' + kd_str + '"]').css('color', '#22ff22');
