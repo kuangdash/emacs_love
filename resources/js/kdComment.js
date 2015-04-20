@@ -30,32 +30,33 @@ $(window).scroll(function () {
     var startPoint=0;
     var endPoint=topArray.length-1;
     var offsetValue=window.pageYOffset+60;
-    
-    while((startPoint+1) < endPoint){
-        if(topArray[Math.floor((startPoint+endPoint)/2)] > offsetValue){
-            endPoint = Math.floor((startPoint+endPoint)/2);
+    if(topArray[kd_tmp]>offsetValue || offsetValue>topArray[kd_tmp+1]){
+        while((startPoint+1) < endPoint){
+            if(topArray[Math.floor((startPoint+endPoint)/2)] > offsetValue){
+                endPoint = Math.floor((startPoint+endPoint)/2);
+            }
+            else if(topArray[Math.floor((startPoint+endPoint)/2)] < offsetValue){
+                startPoint = Math.floor((startPoint+endPoint)/2);
+            }
+            else{
+                break;
+            }
         }
-        else if(topArray[Math.floor((startPoint+endPoint)/2)] < offsetValue){
-            startPoint = Math.floor((startPoint+endPoint)/2);
+        if(offsetValue>topArray[topArray.length-1]){
+            kd_n=topArray.length-1;
+        }
+        else if(offsetValue>topArray[topArray.length-2]){
+            kd_n=topArray.length-2;
         }
         else{
-            break;
+            kd_n = startPoint;
         }
+
+        kd_toc.eq(kd_tmp).children('a').css('color', '#ffff00');
+        kd_tmp = kd_n;
+        kd_toc.eq(kd_tmp).children('a').css('color', '#22ff22');
+        //kd_n = parseInt(kd_str.slice(-1));
     }
-    if(offsetValue>topArray[topArray.length-1]){
-        kd_n=topArray.length-1;
-    }
-    else if(offsetValue>topArray[topArray.length-2]){
-        kd_n=topArray.length-2;
-    }
-    else{
-        kd_n = startPoint;
-    }
-    
-    kd_toc.eq(kd_tmp).children('a').css('color', '#ffff00');
-    kd_tmp = kd_n;
-    kd_toc.eq(kd_tmp).children('a').css('color', '#22ff22');
-    //kd_n = parseInt(kd_str.slice(-1));
 });
 
 /* floating card */
