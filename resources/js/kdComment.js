@@ -20,7 +20,7 @@ var kd_n = 1;
 var kd_tmp = kd_n;
 var kd_head = $('div[id*=\'text-orgheadline\']');
 var topArray = [];
-while(kd_n < kd_head.length){
+while(kd_n <= kd_head.length){
     topArray.push(kd_head.eq(kd_n-1).offset().top);
     kd_n++;
 }
