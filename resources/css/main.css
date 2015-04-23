@@ -75,14 +75,24 @@ h2:before {
     content: "*";
     left: -1.25em;
 }
+h2 {left: 1.25em;}
 h3:before {
     content: "**";
     left: -2em;
 }
+h3 {left: 2em;}
 h4:before {
     content: "***";
     left: -2.5em;
 }
+h4 {left: 2.5em;}
+#table-of-contents > h2 {
+    left: 0;
+}
+#table-of-contents > h2::before {
+    content: none;
+}
+
 i, em, b, strong {
     padding-left: .1em;
     padding-right: .1em;
