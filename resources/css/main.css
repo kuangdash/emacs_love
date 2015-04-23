@@ -89,7 +89,7 @@ h4 {left: 2.5em;}
 #table-of-contents > h2 {
     left: 0;
 }
-#table-of-contents > h2::before {
+#table-of-contents > h2:before {
     content: none;
 }
 
