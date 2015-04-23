@@ -41,7 +41,7 @@ body {
     font-size: 14px;
     line-height: 1.5;
     color: #f0fff0;
-    background-color: #10103f;
+    background-color: #084860;
 }
 p {
     margin: 0 0 20px;
@@ -130,7 +130,9 @@ code, pre {
     color: #3aff3a;
 }
 code {
-    color: #d14;
+    background: #008f0f;
+    border-radius: 5px;
+    color: #ffa0f0;
 }
 code:before, code:after {
     content: "=";
