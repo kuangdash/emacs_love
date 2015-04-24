@@ -451,9 +451,6 @@ table th.right, table td.right {
         font-size: 18px;
         line-height: 1.75;
     }
-    h1:before, h2:before, h3:before, h4:before{
-        display: inline;
-    }
 }
 
 @media (min-width: 1024px) {
