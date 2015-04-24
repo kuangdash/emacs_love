@@ -121,6 +121,10 @@ var balloon;
 
 ls_init();
 
+/* change style*/ 
+
+$('.post-meta').insertAfter('.title').css('margin-bottom','15px').css('text-align','center');
+
 /* editable */
 
 
