@@ -69,7 +69,7 @@ h2:before, h3:before, h4:before {
     position: absolute;
     top: auto;
     color: #cfc;
-    display: none;
+    display: inline;
 }
 h2:before {
     content: "*";
@@ -429,10 +429,7 @@ table th.right, table td.right {
    -------------------------------------------------- */
 
 /* site-nav*/
-@media screen and (max-width: 512px) {
-    h1:before, h2:before, h3:before, h4:before{
-        display: inline;
-    }
+@media screen and (max-width: 512px) {    
   .site-nav {border-top: 1px solid #e8e8e8; text-align: left; }
   .site-nav .menu-icon { display: block; width: 36px; height: 21px; line-height: 0; margin-top: 10px; margin-bottom: 5px; text-align: center;
                          }
