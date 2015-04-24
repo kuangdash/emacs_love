@@ -347,9 +347,7 @@ table th.right, table td.right {
 .post-info + .post-info:before {
     content: "\2223 \00a0";
 }
-.post-meta {
-    border-bottom: 1px solid #e2e3e4;
-}
+
 .center { margin-left: auto; margin-right: auto; text-align: center; }
 
 /* table of content */
