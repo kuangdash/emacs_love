@@ -45,9 +45,6 @@ $(window).scroll(function () {
         if(offsetValue>topArray[topArray.length-1]){
             kd_n=topArray.length-1;
         }
-        else if(offsetValue>topArray[topArray.length-2]){
-            kd_n=topArray.length-2;
-        }
         else{
             kd_n = startPoint;
         }
