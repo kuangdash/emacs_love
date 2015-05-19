@@ -16,16 +16,16 @@ $('.ds-label').click(function(){
 
 /* navigate */
 window.kd_toc = $('#text-table-of-contents ul li');
-window.kd_n = 1;
+window.kd_n = 0;
 window.kd_tmp = kd_n;
-window.kd_head = $('div[id*=\\\'orgheadline\\\']');
+window.kd_head = $('div[id*=\'text-orgheadline\']');
 $(window).scroll(function () {
     //kd_str=\"#orgheadline\" + kd_n.toString();
     //var top1=kd_head.find(kd_str).offset().top;
     var startPoint=0;
     var endPoint=kd_head.length-1;
     var offsetValue=window.pageYOffset+20;
-    if(kd_head.eq(kd_tmp)[0].offsetTop>offsetValue || offsetValue>kd_head.eq(kd_tmp+1)[0].offsetTop){
+    if(kd_head.eq(kd_tmp)[0].offsetTop>offsetValue || offsetValue>kd_head.eq(((kd_tmp+1)>(kd_head.length-1)?(kd_tmp.length-1):(kd_tmp+1)))[0].offsetTop){
         while((startPoint+1) < endPoint){
             if(kd_head.eq(Math.floor((startPoint+endPoint)/2))[0].offsetTop > offsetValue){
                 endPoint = Math.floor((startPoint+endPoint)/2);
