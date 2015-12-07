@@ -1,4 +1,4 @@
-* The repository has been deprecated as a memorial, don't use it.
+* The repository has been deprecated and left as a memorial, don't use it.
 * About
 The theme is created for a static sate generator: org-page --- which was served for [[http://emacs-china.github.io][emacs-china]].
 
